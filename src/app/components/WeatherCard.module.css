@@ -1,0 +1,52 @@
+/*come back to play with styling*/
+/*
+.WeatherCardWrapper {
+    border: 1px solid black;
+}
+
+.WeatherCardImage {
+    height: auto;
+    width: 120px;
+}
+
+.WeatherCardImage scg {
+    height: auto;
+    width: 100%;
+}
+*/
+.weatherCardWrapper{
+    border: 1px solid;
+    border-color: white;
+    max-width: 800px;
+    padding: 25px;
+}
+
+.weatherCardWrapper h2{
+    padding-bottom: 0;
+    padding-left: 30px;
+}
+
+.weatherStatisticsWrapper{
+    display: flex;
+}
+
+.weatherStatisticsWrapper div{
+    width: auto;
+}
+
+.weatherCardImage {
+    height: auto;
+    width: 120px;
+}
+
+.weatherCardImage svg {
+    height: auto;
+    width: 100%;
+}
+
+.statistics {
+    font-size: 40px;
+    font-style: bold;
+    padding-top: 0px;
+    padding-bottom: 0;
+}

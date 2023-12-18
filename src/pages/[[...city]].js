@@ -2,10 +2,11 @@ import { Main } from "next/document";
 import WeatherCard from "../app/components/WeatherCard";
 import "../app/globals.css";
 
-export async function getStaticProps() {
+export async function getStaticProps({params}) {
+    const city = (params && params.city) || "Boston";
     const res = await fetch(
-        'https://api.openweathermap.org/data.2.5/weather/weather?q=TOkyo&appid=${WEATHER_API_KEY}&units=imperioal'
-    );
+        `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.WEATHER_API_KEY}`    
+        );
     const weatherData = await res.json();
 
     return {
@@ -14,6 +15,13 @@ export async function getStaticProps() {
         },
     };
 }
+
+export const getStaticPaths = async () => {
+    return {
+        paths: [],
+        fallback: true,
+    };
+};
 
 export default function Home({weatherData}) {
     console.log(weatherData);
